@@ -1,0 +1,107 @@
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 5px;
+    width: 500px;
+  }
+  
+body {
+    background-color: black;
+}
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .card {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    perspective: 1000px;
+    user-select: none;
+  }
+  
+  .content, .regular {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  
+  .card .content {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: purple;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    background: rgb(69, 69, 255);
+    color: white;
+    transform: rotateY( 180deg );
+  }
+  .hide-reveal {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+  }
+  
+  .feedback > div {
+    padding: 5px 20px;
+    background-color: purple;
+    color: white;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+    /* margin-top: 10px; */
+  }
+
+  .attempts {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+
+.barrier {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: red;
+    position: absolute;
+    z-index: 3;
+}
